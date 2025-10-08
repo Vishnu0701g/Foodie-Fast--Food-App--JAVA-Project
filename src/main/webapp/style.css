@@ -1,0 +1,229 @@
+/* General Body Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f9fa; /* Lighter background */
+}
+
+/* Main container for the two-column layout */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Left informational panel */
+.info-panel {
+    flex: 1.5; /* Made the info panel wider */
+    background-color: #3730a3; /* Solid, rich blue background from image */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.info-content {
+    max-width: 420px;
+    text-align: left;
+}
+
+.info-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.info-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Right panel with the form */
+.form-panel {
+    flex: 1; /* The form panel takes up the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* Styles for the main card element containing the form */
+.card {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Styles for the form heading */
+.form h3 {
+    text-align: center; /* Centered heading like the image */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.form-subtitle {
+    text-align: center; /* Centered subtitle */
+    margin-bottom: 2.5rem;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+/* Grid for the registration form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1; /* Makes the element span both columns */
+}
+
+/* Styles for each form group (label + input) */
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+/* Styles for labels */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+/* Styles for input, select, and textarea fields */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d1d5db; /* Lighter border */
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #fff; /* White background */
+}
+
+.form-group textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+/* Focus state for form fields */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4338ca; /* Indigo color on focus */
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.15);
+    outline: none;
+}
+
+/* Styles for the submit button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4338ca; /* Matching indigo color */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600; /* Adjusted font weight */
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and active states for the button */
+.btn:hover {
+    background-color: #3730a3; /* Darker indigo on hover */
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Styles for the footer text below the form */
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* Styles for the link in the footer */
+.form-footer a {
+    color: #4338ca;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .info-panel {
+        flex: none; /* remove flex grow */
+        height: auto;
+        min-height: 250px;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .info-content {
+        text-align: center;
+    }
+
+    .form-panel {
+        flex: none; /* remove flex grow */
+        padding: 2rem 1rem;
+    }
+    
+    .card {
+         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Stack fields on top of each other */
+        gap: 0.25rem;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .info-content h1 {
+        font-size: 2.5rem;
+    }
+    .info-content h2 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,308 @@
+/* Universal box-sizing for consistent layout */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Main container for the orders page */
+.orders-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading for the orders page */
+.orders-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+/* Message box for errors or general info */
+.message-box {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message-box.error {
+    background-color: #ffebe6;
+    color: #d84315;
+    border: 1px solid #ffab91;
+}
+
+/* Message when no orders are found */
+.no-orders-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+.no-orders-message .btn {
+    margin-top: 1.5rem;
+}
+
+/* List container for individual order cards */
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between order cards */
+}
+
+/* Individual order card styling */
+.order-card {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section of each order card */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 0.8rem;
+}
+
+.order-header .header-left,
+.order-header .header-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.order-id {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.order-id strong {
+    color: #6c63ff;
+}
+
+.order-date, .order-restaurant {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.order-date i, .order-restaurant i {
+    margin-right: 0.4rem;
+    color: #6c63ff;
+}
+
+.order-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Status specific colors */
+.status-confirmed { background-color: #28a745; } /* Green */
+.status-pending { background-color: #ffc107; color: #333;} /* Yellow */
+.status-delivered { background-color: #6f42c1; } /* Purple */
+.status-cancelled { background-color: #dc3545; } /* Red */
+.status-on-the-way { background-color: #007bff; } /* Blue */
+
+
+/* Main order details (total, payment, address) */
+.order-details p {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.order-details p strong {
+    color: #333;
+}
+
+/* Order items list */
+.order-items {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1.5rem;
+}
+
+.order-items h4 {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.order-items ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-items ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.order-items ul li:last-child {
+    border-bottom: none;
+}
+
+.item-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.item-name {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.item-quantity {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0 1rem;
+}
+
+.item-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6c63ff;
+    flex-shrink: 0;
+}
+
+/* Order footer with action buttons */
+.order-footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+}
+
+.primary-btn {
+    background-color: #6c63ff;
+    color: #fff;
+    border: 1px solid #6c63ff;
+}
+
+.primary-btn:hover {
+    background-color: #554dff;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #f0f2f5;
+    color: #6c63ff;
+    border: 1px solid #6c63ff;
+}
+
+.secondary-btn:hover {
+    background-color: #e0e2e5;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .orders-container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+    .orders-heading {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .order-card {
+        padding: 1.2rem;
+    }
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .order-header .header-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .order-details p {
+        font-size: 0.9rem;
+    }
+    .order-items ul li {
+        flex-wrap: wrap; /* Allow item details to wrap */
+    }
+    .item-thumbnail {
+        margin-right: 0.8rem;
+    }
+    .item-name {
+        font-size: 0.95rem;
+    }
+    .item-quantity, .item-price {
+        font-size: 0.85rem;
+        margin: 0;
+        margin-left: auto; /* Push price/quantity to right if wrapped */
+    }
+    .order-footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
+    }
+    .btn {
+        width: 100%;
+    }
+}
