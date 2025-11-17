@@ -1,8 +1,7 @@
-@charset "UTF-8";
 /* General body styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -11,249 +10,501 @@ body {
 
 /* Main container for the checkout page */
 .checkout-container {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px 40px;
+    min-height: calc(100vh - 200px);
 }
 
 /* Heading for the checkout page */
 .checkout-heading {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #4a4a4a;
-    margin-bottom: 2.5rem;
+    font-size: 32px;
     font-weight: 700;
+    color: #282c3f;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
 }
 
-/* Form styling */
+/* Form styling - Grid Layout */
 .checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Left column - Account, Address, Payment */
+.checkout-left-column {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem; /* Space between sections */
+    gap: 20px;
 }
 
 /* Individual checkout section styling */
 .checkout-section {
-    background-color: #f8f8f8;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.checkout-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Section header (icon + title) */
 .section-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
 .section-icon {
-    font-size: 1.5rem;
-    color: #6c63ff;
-    margin-right: 0.8rem;
+    font-size: 22px;
+    color: #fc8019;
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff5ed;
+    border-radius: 8px;
 }
 
 .section-header h2 {
     margin: 0;
-    font-size: 1.3rem;
-    color: #333;
+    font-size: 18px;
+    color: #282c3f;
     font-weight: 600;
 }
 
 /* Content within each section */
 .section-content {
-    padding-left: 2.3rem; /* Align content with section header text */
+    padding-left: 0;
 }
 
 /* User information display */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 12px;
+    border: 2px solid #48c479;
+}
+
+.user-info::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #48c479;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.user-info div {
+    flex: 1;
+}
+
 .user-info p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #555;
+    margin: 4px 0;
+    font-size: 15px;
+    color: #282c3f;
+    font-weight: 500;
+}
+
+.user-info p:first-child {
+    font-size: 17px;
+    font-weight: 700;
+    color: #166534;
 }
 
 /* Login/Signup prompt and buttons */
 .login-prompt {
     text-align: center;
+    padding: 32px 20px;
 }
 
 .login-prompt p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
+    font-size: 15px;
+    color: #686b78;
+    margin-bottom: 24px;
 }
 
 .login-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 12px;
 }
 
-/* Form group styling (label + input/textarea/select) */
+/* Form group styling */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.6rem;
+    margin-bottom: 10px;
     font-weight: 600;
-    font-size: 0.95rem;
-    color: #666;
+    font-size: 14px;
+    color: #282c3f;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 14px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     transition: all 0.3s ease;
+    color: #282c3f;
+    background: #fff;
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resize for address */
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #6c63ff;
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    border-color: #fc8019;
+    box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.1);
     outline: none;
+}
+
+/* Payment options styling */
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.payment-option {
+    padding: 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    text-align: center;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.payment-option.active {
+    border-color: #48c479;
+    background: #f0fdf4;
+    opacity: 1;
+    cursor: default;
+}
+
+.payment-option i {
+    font-size: 24px;
+    color: #686b78;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.payment-option.active i {
+    color: #48c479;
+}
+
+.payment-option span {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #282c3f;
 }
 
 /* Styling for disabled select box */
 .disabled-select {
-    background-color: #e9ecef;
-    color: #777;
-    
+    background-color: #f8f9fa;
+    color: #686b78;
+    cursor: not-allowed;
 }
 
 .disabled-message {
-    font-size: 0.85rem;
-    color: #a0a0a0;
-    margin-top: 0.5rem;
+    font-size: 13px;
+    color: #fc8019;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #fff5ed;
+    border-radius: 8px;
+    border-left: 4px solid #fc8019;
+    display: flex;
+    align-items: center;
 }
 
-/* Order Summary */
+.disabled-message::before {
+    content: 'ℹ';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #fc8019;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Order Summary - Sticky Sidebar */
 .order-summary {
-    background-color: #f8f8f8;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 24px;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .order-summary h3 {
     margin-top: 0;
-    margin-bottom: 1.2rem;
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: 600;
-    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #282c3f;
+    font-weight: 700;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f1f1f1;
 }
 
 .summary-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-    color: #555;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: #686b78;
+}
+
+.summary-item span:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.summary-item span:last-child {
+    font-weight: 600;
+    color: #282c3f;
 }
 
 .summary-item.total {
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
+    border-top: 2px solid #f1f1f1;
+    padding-top: 16px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 18px;
     font-weight: 700;
-    color: #333;
+    color: #282c3f;
+}
+
+.summary-item.total span:last-child {
+    color: #48c479;
+    font-size: 24px;
 }
 
 /* Place Order Section */
 .place-order-section {
     text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 8px;
 }
 
 .disabled-order-message {
-    font-size: 1rem;
-    color: #a0a0a0;
-    margin-bottom: 1.5rem;
+    font-size: 14px;
+    color: #e23744;
+    margin-bottom: 16px;
+    padding: 16px;
+    background: #fee;
+    border-radius: 12px;
+    border: 2px solid #fca5a5;
+    font-weight: 600;
 }
 
 /* Button styling */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 15px;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .primary-btn {
-    background-color: #6c63ff;
+    background-color: #fc8019;
     color: #fff;
-    border: 1px solid #6c63ff;
+    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.2);
 }
 
 .primary-btn:hover:not(:disabled) {
-    background-color: #554dff;
+    background-color: #e67312;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 128, 25, 0.4);
 }
 
 .secondary-btn {
-    background-color: #f0f2f5;
-    color: #6c63ff;
-    border: 1px solid #6c63ff;
+    background-color: #fff;
+    color: #fc8019;
+    border: 2px solid #fc8019;
 }
 
 .secondary-btn:hover:not(:disabled) {
-    background-color: #e0e2e5;
+    background-color: #fc8019;
+    color: #fff;
     transform: translateY(-2px);
 }
 
 .large-btn {
     width: 100%;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 18px 32px;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .disabled-btn {
-    opacity: 0.7;
+    opacity: 0.5;
     cursor: not-allowed;
+    background-color: #d1d5db;
+    box-shadow: none;
+}
+
+.disabled-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Reorder sections for grid */
+.account-section {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.delivery-section {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.payment-section {
+    grid-column: 1;
+    grid-row: 3;
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-summary {
+        position: static;
+        grid-column: 1;
+        grid-row: 4;
+    }
+    
+    .place-order-section {
+        grid-row: 5;
+    }
+}
+
 @media (max-width: 768px) {
     .checkout-container {
-        padding: 1.5rem;
-        margin: 1rem auto;
+        padding: 24px 16px;
+        margin: 24px auto;
     }
+    
     .checkout-heading {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        font-size: 26px;
+        margin-bottom: 24px;
     }
-    .section-content {
-        padding-left: 0; /* Remove left padding on small screens */
+    
+    .checkout-section {
+        padding: 20px;
     }
+    
+    .section-header h2 {
+        font-size: 16px;
+    }
+    
+    .section-icon {
+        font-size: 18px;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .user-info::before {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
     .login-buttons {
         flex-direction: column;
-        gap: 0.8rem;
+        width: 100%;
     }
+    
     .btn {
         width: 100%;
     }
+    
+    .payment-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-item {
+        font-size: 14px;
+    }
+    
+    .summary-item.total {
+        font-size: 16px;
+    }
+    
+    .summary-item.total span:last-child {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-heading {
+        font-size: 22px;
+    }
+    
+    .order-summary h3 {
+        font-size: 18px;
+    }
+    
     .large-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
+        padding: 16px 24px;
+        font-size: 15px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        text-align: center;
     }
 }

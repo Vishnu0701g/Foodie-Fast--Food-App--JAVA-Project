@@ -126,7 +126,7 @@
                         </div>
                         <div class="order-footer">
                            <a href="menu?restaurantId=<%= order.getRestaurantId() %>" class="btn secondary-btn">Reorder from <%= restaurantName %></a>
-                           <a href="help.html" class="btn primary-btn">Contact Support for Order #<%= order.getOrderId() %></a>
+                           <a href="help.jsp" class="btn primary-btn">Contact Support for Order #<%= order.getOrderId() %></a>
                         </div>
                     </div>
                 <% } %>

@@ -37,7 +37,7 @@
     <div class="navbar-left">
         <!-- Logo and Site Name -->
         <a href="home" class="navbar-logo-text">
-            <img src="https://placehold.co/40x40/6c63ff/ffffff?text=LOGO" alt="Foodie Fast Logo" class="navbar-logo-img">
+            <img src="images/ff.png" alt="Foodie Fast Logo" class="navbar-logo-img">
             Foodie Fast
         </a>
     </div>

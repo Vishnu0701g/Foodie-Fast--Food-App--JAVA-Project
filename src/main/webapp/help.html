@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Foodie Fast</title>
+    <link rel="stylesheet" href="help.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+    <main class="help-container">
+        <h1 class="help-heading">How Can We Help You?</h1>
+        <p class="help-intro-text">Have a question or facing an issue? Submit your query below or reach out through our contact options.</p>
+
+        <div class="help-content-wrapper">
+            <!-- Problem Submission Form -->
+            <div class="help-section problem-form-section">
+                <div class="section-header">
+                    <i class="fas fa-edit section-icon"></i>
+                    <h2>Submit Your Query</h2>
+                </div>
+                <form action="" method="post" class="problem-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Brief description of your issue" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Message</label>
+                        <textarea id="description" name="description" rows="6" placeholder="Please provide detailed information about your problem or query..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Submit Query</button>
+                </form>
+            </div>
+
+            <!-- Contact Options Section -->
+            <div class="help-section contact-options-section">
+                <div class="section-header">
+                    <i class="fas fa-headset section-icon"></i>
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Available 9 AM - 6 PM (IST)</p>
+                        <p><strong>+91 98765 43210</strong></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>We'll respond within 24 hours</p>
+                        <p><strong>support@foodiefast.com</strong></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p>Chat with our support team</p>
+                        <button class="btn chat-btn">Start Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+</body>
+</html>
